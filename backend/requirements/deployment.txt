@@ -1,0 +1,5 @@
+# /backend/requirements/deployment.txt
+
+-r base.txt
+
+gunicorn==23.0.0  # https://github.com/benoitc/gunicorn

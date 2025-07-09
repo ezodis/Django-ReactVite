@@ -1,0 +1,16 @@
+# backend/requirements/base.txt
+
+# Django
+# ------------------------------------------------------------------------------
+Django
+djangorestframework
+django-cors-headers
+django-environ
+django-redis
+
+
+stripe
+psycopg[c]==3.2.1
+whitenoise
+redis
+hiredis

@@ -1,0 +1,2 @@
+# deployment.yml
+# docker compose -f deployment.yml up --build
