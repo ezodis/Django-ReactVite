@@ -1,6 +1,5 @@
 # development.yml
-# docker compose -f development.yml up --build
-
+# docker compose --env-file .env/.development -f development.yml up --build
 services:
   backend:
     build:

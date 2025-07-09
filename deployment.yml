@@ -1,2 +1,2 @@
 # deployment.yml
-# docker compose -f deployment.yml up --build
+# docker compose --env-file .env/.deployment -f deployment.yml up --build

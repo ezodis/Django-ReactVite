@@ -1,3 +1,4 @@
+# docker compose -f builder.yml run --rm frontend-init ; docker compose -f builder.yml run --rm backend-init
 # docker compose -f builder.yml run --rm frontend-init
 # docker compose -f builder.yml run --rm backend-init
 
