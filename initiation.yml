@@ -1,7 +1,7 @@
-# docker compose -f builder.yml run --rm frontend-init ; docker compose -f builder.yml run --rm backend-init
-# docker compose -f builder.yml run --rm frontend-init
-# docker compose -f builder.yml run --rm backend-init
-# APP_NAME=app docker compose -f builder.yml run --rm app-init
+# docker compose -f initiation.yml run --rm frontend-init ; docker compose -f initiation.yml run --rm backend-init
+# docker compose -f initiation.yml run --rm frontend-init
+# docker compose -f initiation.yml run --rm backend-init
+# APP_NAME=app docker compose -f initiation.yml run --rm app-init
 
 services:
   frontend-init:
