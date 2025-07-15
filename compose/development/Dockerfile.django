@@ -1,10 +1,24 @@
 # compose/development/Dockerfile.django
 FROM python:3.11
 
+# Set the working directory inside the container
 WORKDIR /app
 
+# Copy all files from the build context to the container
 COPY . .
 
+# Install Python dependencies
 RUN pip install --upgrade pip && pip install -r requirements/development.txt
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run database migrations and start the server
+CMD ["/bin/bash", "-c", "\
+    set -o errexit && \
+    set -o pipefail && \
+    set -o nounset && \
+    echo 'Making database migrations...' && \
+    python manage.py makemigrations --noinput && \
+    echo 'Applying database migrations...' && \
+    python manage.py migrate --noinput && \
+    echo 'Starting the Django server...' && \
+    exec python manage.py runserver 0.0.0.0:8000 \
+"]
