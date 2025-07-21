@@ -2,6 +2,8 @@
 
 services:
   backend:
+    environment:
+      - PYTHONPATH=/app
     build:
       context: ./Features
       dockerfile: ../Compose/development/Dockerfile.django
