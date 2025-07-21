@@ -1,12 +1,12 @@
 # development.yml
 # docker compose --env-file .env/.development -f development.yml up --build
 services:
-  backend:
+  features:
     build:
-      context: ./backend
+      context: ./features
       dockerfile: ../compose/development/Dockerfile.django
     volumes:
-      - ./backend:/app
+      - ./features:/app
     ports:
       - "8000:8000"
     env_file: .env/.development

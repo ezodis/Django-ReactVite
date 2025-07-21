@@ -1,4 +1,4 @@
-# /backend/requirements/development.txt
+# /features/requirements/development.txt
 
 -r base.txt
 
