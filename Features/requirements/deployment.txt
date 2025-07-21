@@ -1,4 +1,4 @@
-# /features/requirements/deployment.txt
+# /Features/requirements/deployment.txt
 
 -r base.txt
 

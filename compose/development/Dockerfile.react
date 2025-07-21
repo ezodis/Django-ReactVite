@@ -1,4 +1,4 @@
-# compose/development/Dockerfile.react
+# Compose/development/Dockerfile.react
 FROM node:20
 
 WORKDIR /app

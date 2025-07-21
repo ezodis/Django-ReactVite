@@ -1,4 +1,4 @@
-# /features/requirements/development.txt
+# /Features/requirements/development.txt
 
 -r base.txt
 

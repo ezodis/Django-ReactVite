@@ -1,6 +1,7 @@
-# docker compose -f initiation.yml run --rm frontend-init ; docker compose -f initiation.yml run --rm features-init
+#initiation.yml
+# docker compose -f initiation.yml run --rm frontend-init ; docker compose -f initiation.yml run --rm backend-init
 # docker compose -f initiation.yml run --rm frontend-init
-# docker compose -f initiation.yml run --rm features-init
+# docker compose -f initiation.yml run --rm backend-init
 # APP_NAME=app docker compose -f initiation.yml run --rm app-init
 
 services:
@@ -11,10 +12,10 @@ services:
     working_dir: /app
     command: sh -c "npm create vite@latest . && npm install"
 
-  features-init:
+  backend-init:
     image: python:3.11-slim
     volumes:
-      - ./features:/app
+      - ./Features:/app
     working_dir: /app
     command: >
       sh -c "
@@ -37,7 +38,7 @@ services:
   app-init:
     image: python:3.11-slim
     volumes:
-      - ./features:/app
+      - ./Features:/app
     working_dir: /app
     command: >
       sh -c "
