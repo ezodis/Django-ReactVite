@@ -1,14 +1,14 @@
 # development.yml
-
+# docker compose --env-file .env/.development -f development.yml up --build
 services:
   backend:
     environment:
       - PYTHONPATH=/app
     build:
-      context: ./Features
-      dockerfile: ../Compose/development/Dockerfile.django
+      context: ./features
+      dockerfile: ../Compose/development/Dockerfile.backend
     volumes:
-      - ./Features:/app
+      - ./features:/app
     ports:
       - "8000:8000"
     env_file: .env/.development
@@ -23,7 +23,7 @@ services:
   frontend:
     build:
       context: ./UI
-      dockerfile: ../Compose/development/Dockerfile.react
+      dockerfile: ../Compose/development/Dockerfile.frontend
     volumes:
       - ./UI:/app
       - /app/node_modules
@@ -34,7 +34,9 @@ services:
     command: npm run dev -- --host
 
   db:
-    image: postgres:16
+    build:
+      context: .
+      dockerfile: ./Compose/development/Dockerfile.db
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
@@ -49,5 +51,3 @@ services:
 
 volumes:
   db_data:
-
-# docker compose --env-file .env/.development -f development.yml up --build

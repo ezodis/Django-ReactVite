@@ -1,4 +1,5 @@
-# Compose/development/Dockerfile.django
+# Compose/development/Dockerfile.backend
+# Using Django
 FROM python:3.11
 
 # Set the working directory inside the container
