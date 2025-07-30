@@ -5,10 +5,10 @@ services:
     environment:
       - PYTHONPATH=/app
     build:
-      context: ./features
-      dockerfile: ../Compose/development/Dockerfile.backend
+      context: ./modules
+      dockerfile: ../compose/development/Dockerfile.backend
     volumes:
-      - ./features:/app
+      - ./modules:/app
     ports:
       - "8000:8000"
     env_file: .env/.development
@@ -22,10 +22,10 @@ services:
 
   frontend:
     build:
-      context: ./UI
-      dockerfile: ../Compose/development/Dockerfile.frontend
+      context: ./ui
+      dockerfile: ../compose/development/Dockerfile.frontend
     volumes:
-      - ./UI:/app
+      - ./ui:/app
       - /app/node_modules
     ports:
       - "5173:5173"
@@ -36,7 +36,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: ./Compose/development/Dockerfile.db
+      dockerfile: ./compose/development/Dockerfile.db
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}

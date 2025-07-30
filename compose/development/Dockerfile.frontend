@@ -1,4 +1,4 @@
-# Compose/development/Dockerfile.frontend
+# compose/development/Dockerfile.frontend
 # Using React + Vite
 FROM node:20
 

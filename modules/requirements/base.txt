@@ -1,4 +1,4 @@
-# features/requirements/base.txt
+# modules/requirements/base.txt
 
 # Django
 # ------------------------------------------------------------------------------

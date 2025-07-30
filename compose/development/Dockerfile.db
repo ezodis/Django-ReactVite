@@ -1,4 +1,4 @@
-# Compose/development/Dockerfile.db
+# compose/development/Dockerfile.db
 # Using Postgres
 FROM postgres:16
 

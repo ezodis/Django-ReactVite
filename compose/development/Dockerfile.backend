@@ -1,4 +1,4 @@
-# Compose/development/Dockerfile.backend
+# compose/development/Dockerfile.backend
 # Using Django
 FROM python:3.11
 
